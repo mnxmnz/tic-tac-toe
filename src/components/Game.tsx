@@ -14,8 +14,7 @@ function Game() {
   const [history, setHistory] = useState<History>([Array(BOARD_SIZE).fill(null)]);
 
   const currentSquares = history[currentMove];
-
-  const currentPlayer: Player = currentMove % 2 === 0 ? PLAYER_X : PLAYER_O;
+  const currentPlayer = currentMove % 2 === 0 ? PLAYER_X : PLAYER_O;
 
   const handlePlay = (nextSquares: Square[]) => {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
