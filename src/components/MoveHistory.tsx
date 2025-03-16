@@ -10,7 +10,7 @@ function MoveHistory({ history, onJumpTo }: MoveHistoryProps) {
     const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
 
     return (
-      <li key={move}>
+      <li key={`move-${move}`}>
         <button onClick={() => onJumpTo(squares)}>{description}</button>
       </li>
     );
