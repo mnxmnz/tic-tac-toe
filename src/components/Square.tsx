@@ -1,5 +1,7 @@
+import { Square as SquareType } from '../types';
+
 interface SquareProps {
-  value: string | null;
+  value: SquareType;
   onClick: () => void;
 }
 

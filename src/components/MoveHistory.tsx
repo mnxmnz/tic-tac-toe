@@ -1,6 +1,8 @@
+import { History, Square } from '../types';
+
 type MoveHistoryProps = {
-  history: (string | null)[][];
-  onJumpTo: (squares: (string | null)[]) => void;
+  history: History;
+  onJumpTo: (squares: Square[]) => void;
 };
 
 function MoveHistory({ history, onJumpTo }: MoveHistoryProps) {

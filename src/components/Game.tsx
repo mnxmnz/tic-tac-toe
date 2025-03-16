@@ -3,22 +3,23 @@ import { useState } from 'react';
 import Board from './Board';
 import MoveHistory from './MoveHistory';
 
-type Player = 'X' | 'O';
+import { Player, History, Square } from '../types';
+import { BOARD_SIZE } from '../constants';
 
 function Game() {
   const [currentMove, setCurrentMove] = useState(0);
-  const [history, setHistory] = useState<(string | null)[][]>([Array(9).fill(null)]);
+  const [history, setHistory] = useState<History>([Array(BOARD_SIZE).fill(null)]);
 
   const currentSquares = history[currentMove];
   const currentPlayer: Player = currentMove % 2 === 0 ? 'X' : 'O';
 
-  const handlePlay = (nextSquares: (string | null)[]) => {
+  const handlePlay = (nextSquares: Square[]) => {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
   };
 
-  const jumpTo = (nextSquares: (string | null)[]) => {
+  const jumpTo = (nextSquares: Square[]) => {
     setCurrentMove(history.indexOf(nextSquares));
   };
 

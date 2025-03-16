@@ -1,12 +1,12 @@
 import Square from './Square';
-import calculateWinner from '../utils/calculateWinner';
 
-type Player = 'X' | 'O';
+import calculateWinner from '../utils/calculateWinner';
+import { Player, Square as SquareType } from '../types';
 
 interface BoardProps {
   currentPlayer: Player;
-  squares: (string | null)[];
-  onPlay: (nextSquares: (string | null)[]) => void;
+  squares: SquareType[];
+  onPlay: (nextSquares: SquareType[]) => void;
 }
 
 function Board({ currentPlayer, squares, onPlay }: BoardProps) {
