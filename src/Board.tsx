@@ -1,20 +1,22 @@
+import Cell from './Cell';
+
 function Board() {
   return (
     <>
       <div className="board-row">
-        <button className="square">1</button>
-        <button className="square">2</button>
-        <button className="square">3</button>
+        <Cell value="1" />
+        <Cell value="2" />
+        <Cell value="3" />
       </div>
       <div className="board-row">
-        <button className="square">4</button>
-        <button className="square">5</button>
-        <button className="square">6</button>
+        <Cell value="4" />
+        <Cell value="5" />
+        <Cell value="6" />
       </div>
       <div className="board-row">
-        <button className="square">7</button>
-        <button className="square">8</button>
-        <button className="square">9</button>
+        <Cell value="7" />
+        <Cell value="8" />
+        <Cell value="9" />
       </div>
     </>
   );
