@@ -1,6 +1,7 @@
 import Square from './Square';
 
 import calculateWinner from '../utils/calculateWinner';
+import formatGameStatus from '../utils/formatGameStatus';
 import { Player, Board as BoardType } from '../types';
 
 interface BoardProps {
@@ -10,10 +11,10 @@ interface BoardProps {
 }
 
 function Board({ currentPlayer, squares, onPlay }: BoardProps) {
-  const winner = calculateWinner(squares);
+  const result = calculateWinner(squares);
 
   const handleClick = (index: number) => {
-    if (squares[index] || winner) {
+    if (squares[index] || result) {
       return;
     }
 
@@ -22,7 +23,7 @@ function Board({ currentPlayer, squares, onPlay }: BoardProps) {
     onPlay(newSquares);
   };
 
-  const status = winner ? `Winner: ${winner}` : `Next player: ${currentPlayer}`;
+  const status = formatGameStatus(result, currentPlayer);
 
   return (
     <div className="game-board">

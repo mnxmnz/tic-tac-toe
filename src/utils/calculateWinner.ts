@@ -10,6 +10,10 @@ function calculateWinner(squares: Square[]) {
     }
   }
 
+  if (squares.every(square => square !== null)) {
+    return 'draw';
+  }
+
   return null;
 }
 
