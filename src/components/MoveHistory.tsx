@@ -10,15 +10,18 @@ function MoveHistory({ history, onJumpTo }: MoveHistoryProps) {
     const description = move > 0 ? `Go to move #${move}` : 'Go to game start';
 
     return (
-      <li key={`move-${move}`}>
-        <button onClick={() => onJumpTo(squares)}>{description}</button>
+      <li key={`move-${move}`} className="history-item">
+        <button className="history-button" onClick={() => onJumpTo(squares)}>
+          {description}
+        </button>
       </li>
     );
   });
 
   return (
     <div className="game-info">
-      <ol>{moves}</ol>
+      <h3 className="history-title">Move History</h3>
+      <ol className="history-list">{moves}</ol>
     </div>
   );
 }

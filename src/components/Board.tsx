@@ -25,14 +25,14 @@ function Board({ currentPlayer, squares, onPlay }: BoardProps) {
   const status = winner ? `Winner: ${winner}` : `Next player: ${currentPlayer}`;
 
   return (
-    <>
+    <div className="game-board">
       <div className="status">{status}</div>
       <div className="board">
         {squares.map((value, index) => (
           <Square key={`square-${index}`} value={value} onClick={() => handleClick(index)} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

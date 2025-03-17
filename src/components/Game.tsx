@@ -28,12 +28,8 @@ function Game() {
 
   return (
     <div className="game">
-      <div className="game-board">
-        <Board currentPlayer={currentPlayer} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
-        <MoveHistory history={history} onJumpTo={jumpTo} />
-      </div>
+      <Board currentPlayer={currentPlayer} squares={currentSquares} onPlay={handlePlay} />
+      <MoveHistory history={history} onJumpTo={jumpTo} />
     </div>
   );
 }
